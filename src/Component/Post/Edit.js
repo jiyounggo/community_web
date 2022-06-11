@@ -83,15 +83,6 @@ function Edit() {
                 }}
             />
             <UploadButtonDiv>
-            <button 
-                className="cancel"
-                onClick={(e)=>{
-                   e.preventDefault();
-                   navigate(-1)
-                    }}
-                    >
-              취소
-            </button>
             <button
              onClick={(e)=>{
                 {onSubmit(e)}
