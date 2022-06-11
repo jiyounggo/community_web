@@ -1,8 +1,10 @@
 import React , {useState,useEffect} from 'react';
+import {Link} from "react-router-dom";
 import {useParams} from "react-router-dom";
 import axios from 'axios';
+
 import {Spinner} from "react-bootstrap";
-import { PostDiv, Post, BtnDiv } from "../../Style/PostDetailCSS.js";
+import { PostDiv, Post, BtnDiv, SpinnerDiv } from "../../Style/PostDetailCSS.js";
 
 function Detail() {
     let params = useParams();
@@ -37,14 +39,16 @@ function Detail() {
         <h2>{PostInfo.content}</h2>
         </Post>
         <BtnDiv>
-          <button className="edit">수정</button>
+          <Link to={`/edit/${PostInfo.postNum}`}><button className="edit">수정</button></Link>
           <button className="delete">삭제</button>
         </BtnDiv>
         </div>
         ):(
+      <SpinnerDiv>
         <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
-      </Spinner>
+       </Spinner>
+      </SpinnerDiv>
       )}
       
       </PostDiv>
