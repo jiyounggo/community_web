@@ -1,5 +1,6 @@
 import React,{useState ,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import ImageUpload from "./ImageUpload";
 import {UploadDiv,UploadForm,UploadButtonDiv} from "../../Style/UploadCSS.js"
 import axios from "axios"
 function Upload(props){
@@ -40,6 +41,7 @@ function Upload(props){
                 onChange={(e)=>{
                     setTitle(e.target.value)
                     }}/>
+                    <ImageUpload/>
             <label htmlFor="">내용</label>
             <textarea
             value={content}
