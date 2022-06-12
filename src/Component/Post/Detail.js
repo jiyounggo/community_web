@@ -56,6 +56,9 @@ function Detail() {
         <Post>
         <p>{PostInfo.postNum}</p>
         <h1>{PostInfo.title}</h1>
+        {PostInfo.image ?<img src={`http://localhost:5000/${PostInfo.image}`} alt="" 
+        style={{width:"100%", height:"auto"}}/> : null}
+        
         <h2>{PostInfo.content}</h2>
         </Post>
         <BtnDiv>

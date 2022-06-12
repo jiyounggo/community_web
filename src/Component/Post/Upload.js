@@ -6,6 +6,7 @@ import axios from "axios"
 function Upload(props){
     const [Title, setTitle] = useState("");
     const [content,setContent] = useState("");
+    const [Image,setImage] = useState("");
     let navigate = useNavigate();
 
     const onSubmit =(e)=>{
@@ -16,6 +17,7 @@ function Upload(props){
         let body = {
             title : Title,
             content :content,
+            image:Image,
         }
         axios.post("/api/post/submit", body)
         .then((response)=>{
@@ -41,7 +43,7 @@ function Upload(props){
                 onChange={(e)=>{
                     setTitle(e.target.value)
                     }}/>
-                    <ImageUpload/>
+            <ImageUpload setImage={setImage}/>
             <label htmlFor="">내용</label>
             <textarea
             value={content}
